@@ -1,0 +1,10 @@
+.desc{
+    position: relative;
+}
+
+.content-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Hiển thị tối đa 2 dòng */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

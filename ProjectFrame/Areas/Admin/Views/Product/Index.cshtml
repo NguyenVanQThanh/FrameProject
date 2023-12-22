@@ -1,0 +1,110 @@
+﻿@using Models
+@model List<Product>
+<partial name="_Notification"></partial>
+@section CSS_Lib{
+    <link rel="stylesheet" href="~/modules/datatables/datatables.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/modules/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/modules/generate/product/css/index.css" asp-append-version="true">
+
+}   
+@section JS_Lib{
+    <script src="~/modules/datatables/datatables.min.js" asp-append-version="true"></script>
+    <script src="~/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js" asp-append-version="true"></script>
+    <script src="~/modules/datatables/Select-1.2.4/js/dataTables.select.min.js" asp-append-version="true"></script>
+    <script src="~/modules/jquery-ui/jquery-ui.min.js" asp-append-version="true"></script>
+}
+@section JS_Specific{
+      <script src="~/js/page/modules-datatables.js" asp-append-version="true"></script>
+}
+<div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>Quản lý sản phẩm</h1>
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item active"><a asp-area="Admin" asp-controller="Customer" asp-action="Index">Home</a></div>
+              <div class="breadcrumb-item"><a asp-area="Admin" asp-controller="Product" asp-action="Index">Quản lý sản phẩm</a></div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header col-12">
+                    <div class="col-6 "><h4>Quản lý sản phẩm</h4></div>
+                    <div class="col-6 justify-content-end">            <a asp-area="Admin" asp-controller="Product" asp-action="Create" class="add_emp">Thêm sản phẩm</a></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped" id="table-1">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Tên</th>
+                                            <th scope="col">Ảnh</th>
+                                            <th scope="col">Nhà Cung Cấp</th>
+                                            <th scope="col">Vấn đề về da</th>
+                                            <th scope="col" class="desc_product">Mô tả</th>
+                                            <th scope="col">Loại da</th>
+                                            <th scope="col">Đối tượng</th>
+                                            <th scope="col">Số lượng</th>
+                                            <th scope="col">Giá</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var obj in Model.OrderBy(u => u.Id))
+                                        {
+                                            <tr>
+                                                <th scope="row">@obj.Id</th>
+                                                <td>@obj.Name</td>
+                                                <td><img src="@obj.ImageUrl"></td>
+                                                <td>@obj.Supplier</td>
+                                                <td>@obj.VDeDa</td>
+                                                
+                                                <td class="desc">
+                                                    <div class="content-desc">
+                                                            @obj.Description
+                                                    </div>
+                                                </td>
+                                                
+                                                <td>@obj.LoaiDa</td>
+                                                <td>@obj.Sex</td>
+                                                <td>@obj.Quantity</td>
+                                                <td>@obj.Price</td>
+                                                <td>
+                                                    @if (obj.Enable)
+                                                    {
+                                                        <a class="btn btn-success" asp-controller="Product" asp-action="Enable" asp-route-id="@obj.Id">
+                                                            Enable
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a class="btn btn-danger" asp-controller="Product" asp-action="Enable" asp-route-id="@obj.Id">
+                                                            Disable
+                                                        </a>
+                                                    }
+
+                                                </td>
+                                                <td>
+                                                    <a asp-area="Admin" asp-controller="Product" asp-action="Edit" asp-route-id="@obj.Id" class="g-5"><i class="fa-solid fa-pen-to-square"></i></a>
+
+                                                    <a asp-area="Admin" asp-controller="Product" asp-action="Delete" asp-route-id="@obj.Id"><i class="fa-solid fa-trash"></i></a>
+
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>

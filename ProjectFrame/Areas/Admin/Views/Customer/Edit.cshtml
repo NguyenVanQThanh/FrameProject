@@ -1,0 +1,113 @@
+﻿@using Models
+@model User
+<partial name="_Notification" />
+
+<nav class="navbar navbar-expand px-3 border-bottom">
+    <button class="btn" id="sidebar-toggle" type="button">
+        <span class="navbar-toggler-icon"></span>
+        <a>Quản lý khách hàng</a>
+        <span>/</span>
+        <a>Chỉnh sửa khách hàng</a>
+    </button>
+    <div class="navbar-collapse navbar">
+
+        <ul class="navbar-nav">
+            <li class="">
+                <div class="notification">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="badge">2</span>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                    <img src="./assets/img/avatar.png" class="avatar img-fluid rounded" alt="">
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a class="dropdown-item">Profile</a>
+                    <a class="dropdown-item">Setting</a>
+                    <a class="dropdown-item">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<main class="content px-3 py-2">
+    <div class=""></div>
+    <div class="container-fluid add_form">
+        <h3 class="add_emp_title">Sửa thông tin khách hàng</h3>
+        <form method="post">
+            <div style="display:none;">
+                <label asp-for="Id">Họ tên</label>
+                <input asp-for="Id" type="number" value="@Model.Id" hidden/>
+            </div>
+            <div style="display:none;">
+                <label asp-for="Total">Họ tên</label>
+                <input asp-for="Total" type="text" value="@Model.Total" hidden/>
+            </div>
+            <div style="display:none;">
+                <label asp-for="Enable">Họ tên</label>
+                <input asp-for="Enable" type="text" value="@Model.Enable" hidden />
+            </div>
+            <div asp-validation-summary="All"></div>
+            <div class="field">
+                <label asp-for="Name">Họ tên</label>
+                <input asp-for="Name" type="text" value="@Model.Name">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="field">
+                <label asp-for="Phone">SĐT</label>
+                <input asp-for="Phone" type="text" id="phone" value="@Model.Phone">
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="field">
+                <label asp-for="Email">Email</label>
+                <input asp-for="Email" type="email" value="@Model.Email" readonly>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="field">
+                <label asp-for="Birthday">Ngày sinh</label>
+                <input asp-for="Birthday" type="date" value="@Model.Birthday.ToString("yyyy-MM-dd")">
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+            </div>
+            <div class="field">
+                <label asp-for="Address">Địa chỉ</label>
+                <input asp-for="Address" type="text" value="@Model.Address">
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="field">
+                <label asp-for="PostCode">PostCode</label>
+                <input asp-for="PostCode" type="text" value="@Model.PostCode" maxlength="12">
+                <span asp-validation-for="PostCode" class="text-danger"></span>
+            </div>
+@*             <div style="display: none;">
+                <label asp-for="Password"></label>
+                <input type="text" value="@Model.PasswordHash" asp-for="Password" hidden />
+            </div> *@
+            <div class="btn_submit">
+                <button type="submit" class="Submit">Sửa </button>
+            </div>
+
+        </form>
+
+    </div>
+</main>
+<script>
+    const phoneInput = document.getElementById('phone');
+
+    phoneInput.addEventListener('input', () => {
+        const inputValue = phoneInput.value;
+        const numericValue = inputValue.replace(/\D/g, ''); // Loại bỏ các ký tự không phải số
+
+        if (numericValue.length > 10) {
+            phoneInput.value = numericValue.slice(0, 10);
+        } else {
+            phoneInput.value = numericValue;
+        }
+    });
+
+</script>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

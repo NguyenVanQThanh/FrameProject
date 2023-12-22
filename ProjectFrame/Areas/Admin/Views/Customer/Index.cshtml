@@ -1,0 +1,110 @@
+﻿@using Models
+@model List<User>
+
+@section CSS_Lib{
+    <link rel="stylesheet" href="~/modules/datatables/datatables.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css" asp-append-version="true">
+}   
+@section JS_Lib{
+    <script src="~/modules/datatables/datatables.min.js" asp-append-version="true"></script>
+    <script src="~/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js" asp-append-version="true"></script>
+    <script src="~/modules/datatables/Select-1.2.4/js/dataTables.select.min.js" asp-append-version="true"></script>
+    <script src="~/modules/jquery-ui/jquery-ui.min.js" asp-append-version="true"></script>
+}
+@section JS_Specific{
+    <script src="~/js/page/modules-datatables.js" asp-append-version="true"></script>
+
+}
+<partial name="_Notification" />
+
+<div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>Quản lý Khách hàng</h1>
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item active"><a asp-area="Admin" asp-controller="Customer" asp-action="Index">Home</a></div>
+              <div class="breadcrumb-item"><a asp-area="Admin" asp-controller="Product" asp-action="Index">Quản lý Khách hàng</a></div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header col-6">
+                    <div class="col-6"><h4>Khách hàng</h4></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped" id="table-1">
+                        <thead>                                 
+                          <tr>
+                            <th class="text-center">                         
+                            </th>
+                            <th>Tên</th>
+                            <th>Email</th>
+                            <th>Birthday</th>
+                            <th>PostCode</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>                                 
+                          <tr>
+                            <td>
+                              1
+                            </td>
+                            <td>Create a mobile app</td>
+                            <td class="align-middle">
+                              <div class="progress" data-height="4" data-toggle="tooltip" title="100%">
+                                <div class="progress-bar bg-success" data-width="100%"></div>
+                              </div>
+                            </td>
+                            <td>
+                              <img alt="image" src="assets/img/avatar/avatar-5.png" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian">
+                            </td>
+                           </tr>
+                           
+                           @foreach(var obj in Model.OrderBy(u=>u.Id))
+                           {
+                            <tr>
+                              <td>@obj.Id</td>
+                              <td>@obj.Name</td>
+                              <td>@obj.Email</td>
+                              <td>@obj.Birthday.ToString("yyyy-MM-dd")</td>
+                              <td>@obj.PostCode</td>
+                              <td>@obj.Total</td>
+                              <td>
+                                @if (obj.Enable)
+                                {
+                                    <a class="btn btn-success" asp-controller="Customer" asp-action="Enable" asp-route-id="@obj.Id">
+                                        Enable
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-danger" asp-controller="Customer" asp-action="Enable" asp-route-id="@obj.Id">
+                                        Disable
+                                    </a>
+                                }
+
+                              </td>
+                              <td>
+                                <a asp-area="Admin" asp-controller="Customer" asp-action="Edit" asp-route-id="@obj.Id" class="g-5"><i class="bi bi-pencil-square"></i></a>
+                                <a asp-area="Admin" asp-controller="Customer" asp-action="Delete" asp-route-id="@obj.Id"><i class="bi bi-trash"></i></a>
+                              </td>
+                            </tr>
+                           }
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+          </div>
+        </section>
+      </div>

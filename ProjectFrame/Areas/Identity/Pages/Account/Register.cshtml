@@ -1,0 +1,59 @@
+﻿@page
+@model RegisterModel
+
+@{
+
+    ViewData["Title"] = "Log in";
+}
+
+<section id="wsus__login_register">
+    <div class="container">
+        <h1>@ViewData["Title"]</h1>
+        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+        <div class="row">
+            <div class="col-xl-5 m-auto">
+                <div class="wsus__login_reg_area">
+                    <ul class="nav nav-pills mb-3" id="pills-tab2" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a asp-area="Identity" asp-page="/Account/Login" class="nav-link">login</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="pills-profile-tab2">signup</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent2">
+                        <div class="tab-pane fade show active" id="pills-homes" role="tabpanel"
+                             aria-labelledby="pills-home-tab2">
+                            <div class="wsus__login">
+                                <form method="post">
+                                    <div class="wsus__login_input">
+                                        <i class="fas fa-user-tie"></i>
+                                        <input asp-for="Input.Name" type="text" placeholder="Name">
+                                    </div>
+                                    <div class="wsus__login_input">
+                                        <i asp-for="Input.Email" class="far fa-envelope"></i>
+                                        <input asp-for="Input.Email" type="text" placeholder="Email">
+                                    </div>
+                                    <div class="wsus__login_input">
+                                        <i class="fas fa-key"></i>
+                                        <input asp-for="Input.Password" type="password" placeholder="Password">
+                                    </div>
+                                    <div class="wsus__login_input">
+                                        <i class="fas fa-key"></i>
+                                        <input asp-for="Input.ConfirmPassword" type="password" placeholder="Confirm Password">
+                                    </div>
+                                    <button class="common_btn" type="submit">signup</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,91 @@
+﻿@using Models
+@model List<Product>
+<section id="wsus__product_page" class="wsus__category_pages">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <form>
+                                <div class="wsus__product_topbar wsus__category_topbar">
+                                    @* <div class="wsus__topbar_select">
+                                        <select class="select_2" name="state">
+                                            <option>select category</option>
+                                            <option>men's</option>
+                                            <option>wemen's</option>
+                                            <option>kid's</option>
+                                            <option>electronics</option>
+                                            <option>electrick</option>
+                                        </select>
+                                    </div>
+                                    <div class="wsus__topbar_select">
+                                        <select class="select_2" name="state">
+                                            <option>default shorting</option>
+                                            <option>short by rating</option>
+                                            <option>short by latest</option>
+                                            <option>low to high </option>
+                                            <option>high to low</option>
+                                        </select>
+                                    </div>
+                                    <button class="common_btn" type="submit">filter product</button> *@
+                                </div>
+                            </form>
+                        </div>
+                        @foreach(var obj in Model){
+                        <div class="col-xl-3 col-sm-6 col-lg-4">
+                            <div class="wsus__product_item">
+                                <a class="" asp-controller="Product" asp-action="Detail" asp-route-id="@obj.Id">
+                                    <img src="@obj.ImageUrl" alt="product" class="w-100" />
+                                </a>
+                                @* <ul class="wsus__single_pro_icon">
+                                    <li><a href="#"><i class="fal fa-shopping-bag"></i></a></li>
+                                    <li><a href="#"><i class="far fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="far fa-random"></i></a>
+                                </ul> *@
+                                <div class="wsus__product_details">
+                                    <a class="wsus__category" >@obj.Category</a>
+                                    @*  <p class="wsus__pro_rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(120 review)</span>
+                                    </p> *@
+                                    <a class="wsus__pro_name" href="#">@obj.Name</a>
+                                    <p class="wsus__price">@obj.Price VND</p>
+                                    <a class="add_cart" asp-controller="Cart" asp-action="AddCart" asp-route-ProductId="@obj.Id">add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        }
+                        
+
+                        <div class="col-xl-12">
+                            <section id="pagination">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link page_active" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

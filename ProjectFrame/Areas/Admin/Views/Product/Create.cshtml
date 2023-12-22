@@ -1,0 +1,110 @@
+﻿@using Models
+@model Product
+
+<section class="section">
+          <div class="section-header">
+            <h1>Form</h1>
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+              <div class="breadcrumb-item"><a href="#">Bootstrap Components</a></div>
+              <div class="breadcrumb-item">Form</div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <h2 class="section-title">Forms</h2>
+            <p class="section-lead">
+              Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
+            </p>
+
+            <div class="row">
+              <div class="col-12 col-md-8 col-lg-8">
+                <form method="post" enctype="multipart/form-data">
+                  <div asp-validation-summary="All"></div>
+                    @*                 <input class="form-control" asp-for="Id" value="@(Model != null ? Model.Id : 0)" type="number" hidden /> *@
+                  @* <input class="form-control" asp-for="Enable" value="@Model?.Enable" type="text" hidden /> *@
+                  <div class="form-group">
+                      <label asp-for="ImageUrl">Hình ảnh</label>
+                      <input class="form-control" asp-for="ImageUrl" type="file" name="file">
+                  </div>
+                  <div class="form-group">
+                      <label asp-for="Category">Loại sản phẩm</label>
+                      <select class="form-control" asp-for="Category" id="">
+                          <option>Chọn loại sản phẩm</option>
+                          @foreach(var cate in Product.listCategory)
+                          {
+                              <option value="@cate">@cate</option>
+                          }
+                      </select>
+                      <span asp-validation-for="Category" class="text-danger"></span>
+                  </div>
+                  <div class="form-group">
+                      <label asp-for="Name">Tên</label>
+                      <input class="form-control" asp-for="Name" type="text">
+                      <span asp-validation-for="Name" class="text-danger"></span>
+                  </div>
+                  <div class="form-group">
+                      <label asp-for="Supplier">Nhà cung cấp</label>
+                      <input class="form-control" asp-for="Supplier" type="text">
+                      <span asp-validation-for="Supplier" class="text-danger"></span>
+                  </div>
+                  <div class="form-group">
+                      <label asp-for ="Sex">Đối tượng</label>
+                      <select class = "form-control" asp-for="Sex" id="">
+                          <option>Chọn giới tính</option>
+                          @foreach(var sex in Product.listSex)
+                          {
+                              <option value="@sex">@sex</option>
+                          }
+                      </select>
+                      @* <input type="text" asp-for ="Sex" /> *@
+                      <span asp-validation-for="Sex" class="text-danger"></span>
+                  </div>
+                  <div class="form-group">
+                      <label asp-for ="VDeDa">Vấn đề về da</label>
+                      <select class = "form-control" asp-for= "VDeDa">
+                          <option>Chọn vấn đề da</option>
+                          @foreach(var vdd in Product.listVanDeDa)
+                          {
+                              <option value="@vdd">@vdd</option>
+                          }
+                      </select>
+                      <span asp-validation-for="VDeDa" class="text-danger"></span>
+                  </div>
+                  <div class="form-group">
+                      <label asp-for="LoaiDa">Loại da</label>
+                      <select class = "form-control" asp-for="LoaiDa">
+                          <option>Chọn loại da</option>
+                          @foreach (var loaida in Product.listLoaiDa)
+                          {
+                              <option value="@loaida">@loaida</option>
+                          }
+                      </select>
+                      <span asp-validation-for="LoaiDa" class="text-danger"></span>
+                  </div>
+                  <div class="form-group">
+                      <label asp-for="Quantity" >Số lượng</label>
+                      <input class="form-control" asp-for="Quantity" type="number" min="0" step="1" pattern="\d+">
+                      <span asp-validation-for="Quantity" class="text-danger"></span>
+  
+                  </div>
+                  <div class="form-group">
+                      <label asp-for="Price">Giá bán</label>
+                      <input class="form-control" asp-for="Price" type="number" min="0">
+                      <span asp-validation-for="Price" class="text-danger"></span>
+  
+                  </div>
+                  <div class="form-group">
+                      <label asp-for="Description" >Mô tả</label>
+                      <textarea class ="form-control" asp-for = "Description"></textarea>
+                      <span asp-validation-for="Description" class="text-danger"></span>
+  
+                  </div>
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">Thêm</button>
+                  </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </section>
