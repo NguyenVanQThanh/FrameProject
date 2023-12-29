@@ -1,0 +1,73 @@
+@{
+    Layout = "/Areas/Identity/Pages/Account/Manage/_Layout.cshtml";
+}
+@using Models
+@model List<Order>
+<div class="row">
+        <div class="col-xl-9 col-xxl-10 col-lg-9  ms-auto">
+          <div class="dashboard_content">
+            <h3><i class="fas fa-list-ul"></i> order</h3>
+            <div class="wsus__dashboard_order">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="package">ID</th>
+                      <th class="p_date">Tên</th>
+                      <th class="e_date">Địa chỉ</th>
+                      <th class="price">Số điện thoại</th>
+                      <th class="method">Tình Trạng Đơn Hàng</th>
+                      <th class="tr_id">Phương thức thanh toán</th>
+                      <th class="status">Tình trạng thanh toán</th>
+                      <th hidden class="status">Khách hàng</th>
+                      <th class="status">Tổng giá</th>
+                      <th class="status">Action</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach(var obj in Model.OrderBy(u=>u.Id)){
+                        <tr>
+                            <td>@obj.Id</td>
+                            <td>@obj.Name</td>
+                            <td>@obj.Address</td>
+                            <td>@obj.Phone</td>
+                            <td>@obj.Status</td>
+                            <td>@obj.Payment_method</td>
+                            <td>@obj.Payment_status</td>
+                            <td hidden>@obj.CustomerId</td>
+                            <td>@obj.Total</td>
+                            <td>
+                                <a href="/Identity/Order-detail/@obj.Id" class="g-5"><i class="bi bi-pencil-square"></i></a>
+                            </td>
+                            
+
+                        </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+              <div id="pagination">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                      </a>
+                    </li>
+                    <li class="page-item"><a class="page-link page_active" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
