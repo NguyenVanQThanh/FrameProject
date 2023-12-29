@@ -1,36 +1,38 @@
 {
   "format": 1,
   "restore": {
-    "D:\\_BTCode\\FrameProject\\FrameProject\\DataAccess\\DataAccess.csproj": {}
+    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "D:\\_BTCode\\FrameProject\\FrameProject\\DataAccess\\DataAccess.csproj": {
+    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\_BTCode\\FrameProject\\FrameProject\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\_BTCode\\FrameProject\\FrameProject\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\nguye_b1apmci\\.nuget\\packages\\",
-        "outputPath": "D:\\_BTCode\\FrameProject\\FrameProject\\DataAccess\\obj\\",
+        "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nguye_b1apmci\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\LAPTOP ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\_BTCode\\FrameProject\\FrameProject\\Models\\Models.csproj": {
-                "projectPath": "D:\\_BTCode\\FrameProject\\FrameProject\\Models\\Models.csproj"
+              "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj": {
+                "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj"
               },
-              "D:\\_BTCode\\FrameProject\\FrameProject\\Utility\\Utility.csproj": {
-                "projectPath": "D:\\_BTCode\\FrameProject\\FrameProject\\Utility\\Utility.csproj"
+              "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj": {
+                "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj"
               }
             }
           }
@@ -94,26 +96,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\_BTCode\\FrameProject\\FrameProject\\Models\\Models.csproj": {
+    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\_BTCode\\FrameProject\\FrameProject\\Models\\Models.csproj",
+        "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "D:\\_BTCode\\FrameProject\\FrameProject\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\nguye_b1apmci\\.nuget\\packages\\",
-        "outputPath": "D:\\_BTCode\\FrameProject\\FrameProject\\Models\\obj\\",
+        "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nguye_b1apmci\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\LAPTOP ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -161,26 +165,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\_BTCode\\FrameProject\\FrameProject\\Utility\\Utility.csproj": {
+    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\_BTCode\\FrameProject\\FrameProject\\Utility\\Utility.csproj",
+        "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj",
         "projectName": "Utility",
-        "projectPath": "D:\\_BTCode\\FrameProject\\FrameProject\\Utility\\Utility.csproj",
-        "packagesPath": "C:\\Users\\nguye_b1apmci\\.nuget\\packages\\",
-        "outputPath": "D:\\_BTCode\\FrameProject\\FrameProject\\Utility\\obj\\",
+        "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj",
+        "packagesPath": "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nguye_b1apmci\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\LAPTOP ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -248,7 +254,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
