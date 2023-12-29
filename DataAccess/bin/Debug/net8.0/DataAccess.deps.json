@@ -2024,7 +2024,8 @@
       "Models/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
-          "Microsoft.AspNetCore.Identity.UI": "8.0.0"
+          "Microsoft.AspNetCore.Identity.UI": "8.0.0",
+          "Utility": "1.0.0"
         },
         "runtime": {
           "Models.dll": {}

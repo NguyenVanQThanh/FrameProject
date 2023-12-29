@@ -23,3 +23,6 @@ D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\ne
 D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\refint\Models.dll
 D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\Models.pdb
 D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\ref\Models.dll
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\bin\Debug\net8.0\Utility.dll
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\bin\Debug\net8.0\Utility.pdb
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\Models.csproj.CopyComplete

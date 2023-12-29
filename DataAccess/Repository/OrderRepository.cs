@@ -21,15 +21,40 @@ namespace DataAccess.Repository
             // _db.Orders.Add(order);
             // _db.SaveChanges();
             foreach(var cart in carts){
-                OrderDetail orderDetail = new OrderDetail{
-                    IdOrder = orderId,
-                    IdProduct = cart.ProductId,
-                    Quantity = cart.Quantity,
-                    Total = (decimal) (cart.Quantity * cart.Product.Price)
-                };
-                _db.OrderDetails.Add(orderDetail);
-                _db.Carts.Remove(cart);
-                _db.SaveChanges();
+                decimal total;
+                Product product;
+                if (cart.Product!=null){
+                    total = (decimal) (cart.Quantity * cart.Product.Price);
+                    product = cart.Product;
+                    product.Quantity -= cart.Quantity;
+                    OrderDetail orderDetail = new OrderDetail
+                    {
+                        IdOrder = orderId,
+                        IdProduct = cart.ProductId,
+                        Quantity = cart.Quantity,
+                        Total = total
+                    };
+                    _db.Products.Update(product);
+                    _db.OrderDetails.Add(orderDetail);
+                    _db.Carts.Remove(cart);
+                    _db.SaveChanges();
+                }
+                else {
+                    product = _db.Products.Find(cart.ProductId);
+                    total = (decimal) (cart.Quantity*product.Price);
+                    OrderDetail orderDetail = new OrderDetail
+                    {
+                        IdOrder = orderId,
+                        IdProduct = cart.ProductId,
+                        Quantity = cart.Quantity,
+                        Total = total
+                    };
+                    _db.Products.Update(product);
+                    _db.OrderDetails.Add(orderDetail);
+                    _db.SaveChanges();
+
+                }
+
             }
             _db.SaveChanges();
         }

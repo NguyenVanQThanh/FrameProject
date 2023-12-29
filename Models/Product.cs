@@ -39,11 +39,11 @@ namespace Models
         public string? ImageUrl { get; set; }
 
         public static List<string> listCategory = new List<string> {
-            "Nước Tẩy trang",
             "Sữa rửa mặt",
             "Kem chống nắng",
             "Serum",
-            "Kem dưỡng ẩm"
+            "Kem dưỡng ẩm",
+            "Nước tẩy trang"
             };
 
         public static List<string> listSex = new List<string>

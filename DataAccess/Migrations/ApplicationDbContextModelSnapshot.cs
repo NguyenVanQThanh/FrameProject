@@ -271,12 +271,16 @@ namespace DataAccess.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CustomerId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Enable")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Payment_method")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -297,9 +301,12 @@ namespace DataAccess.Migrations
                     b.Property<decimal>("Total")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Orders");
                 });
@@ -588,7 +595,7 @@ namespace DataAccess.Migrations
                 {
                     b.HasOne("Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("CustomerId");
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });

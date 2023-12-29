@@ -58,7 +58,12 @@
 
                                     <tr class="d-flex">
                                         <td class="wsus__pro_name" style="width:425px">
-                                            <p>@obj.Product.Name</p>
+                                            @if(@obj.Product!=null){
+                                                <p>@obj.Product.Name</p>
+                                            }else {
+                                                <p>@Model.productList.Where(u=>u.Id == obj.ProductId)</p>
+
+                                            }
                                         </td>
 
                                         <td class="wsus__pro_select">
@@ -68,15 +73,7 @@
                                             height: 36px;
                                             padding-left: 5px;" type="text" min="1" max="100" data-cartid="@obj.Id"
                                                     value="@obj.Quantity" />
-                                                @if (obj.Quantity == obj.Product.Quantity)
-                                                {
-                                                    <button class="btn btn-success product-increment" disabled>+</button>
-
-                                                }
-                                                else
-                                                {
-                                                    <button class="btn btn-success product-increment">+</button>
-                                                }
+                                               <button class="btn btn-success product-increment">+</button>
                                             </div>
                                         </td>
 
@@ -154,17 +151,18 @@
                         if (data.status === 'success') {
                             let productId = '#' + cartId;
                             $(productId).text(data.product_total);
-
                             let subtotalElement = $('.cart_subtotal');
                             let currentSubtotal = parseFloat(subtotalElement.text());
-                            let updatedSubtotal = currentSubtotal + data.product_price;
+                            let updatedSubtotal = currentSubtotal + parseFloat(data.product_price);
                             subtotalElement.text(updatedSubtotal);
-
-
                             toastr.success(data.message);
-                        } else if (data.status === 'error') {
+
+
+
+                        } else if (data.status === 'Error') {
                             toastr.error(data.message);
                         }
+
                     },
                     error: function (data) {
 
@@ -198,14 +196,14 @@
                             if (enable) {
                                 let subtotalElement = $('.cart_subtotal');
                                 let currentSubtotal = parseFloat(subtotalElement.text());
-                                let updatedSubtotal = currentSubtotal - data.product_price;
+                                let updatedSubtotal = currentSubtotal - parseFloat(data.product_price);
                                 subtotalElement.text(updatedSubtotal);
                                 toastr.success(data.message);
                             }
 
 
 
-                        } else if (data.status === 'error') {
+                        } else if (data.status === 'Error') {
                             toastr.error(data.message);
                         }
 
@@ -233,6 +231,8 @@
                             success: function (data) {
                                 if (data.status === 'success') {
                                     window.location.reload();
+                                } else if (data.status === 'Error') {
+                                    toastr.error(data.message);
                                 }
 
 

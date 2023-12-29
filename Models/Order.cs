@@ -20,6 +20,8 @@ namespace Models
         public string Phone { get; set; }
         [Required]
         public string Status { get; set; }
+        [Required]
+        public string Payment_method {get; set;}
         public string? Payment_status {get; set;}
         [Required]
         public Boolean Enable { get; set; }
@@ -29,7 +31,7 @@ namespace Models
         public DateTime Created { get; set; }
         public DateTime? Success { get; set; }
         public string? CustomerId {  get; set; }
-        [ForeignKey("CustomerId")]
+        [ForeignKey("UserId")]
         public User? User { get; set; }
 
         

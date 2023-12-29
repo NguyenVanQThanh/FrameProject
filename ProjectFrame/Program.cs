@@ -19,6 +19,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>().AddSignInManager<SignInManager<IdentityUser>>()
     .AddDefaultTokenProviders();
+// builder.Services.Configure<MomoConfig>(
+//     builder.Configuration.GetSection(MomoConfig.ConfigName));
 // builder.Services.AddIdentity<User, IdentityRole>()
 //     .AddEntityFrameworkStores<ApplicationDbContext>().AddSignInManager<SignInManager<User>>()
 //     .AddDefaultTokenProviders();
@@ -46,6 +48,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration.GetSection("AuthMessageSender"));

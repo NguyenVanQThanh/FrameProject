@@ -265,8 +265,108 @@
       "PackagePath": "staticwebassets\\images\\product\\8b13eb1f-938e-4704-8420-659c6376552b.jpg"
     },
     {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\Bioderma.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\Bioderma.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\Embryolisse.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\Embryolisse.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\GoodnDoc.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\GoodnDoc.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\Hatomugi.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\Hatomugi.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\KCNAnessa.png",
+      "PackagePath": "staticwebassets\\images\\product\\KCNAnessa.png"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\KCNBiore.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\KCNBiore.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\KCNSunplay.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\KCNSunplay.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\KCNskin1004.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\KCNskin1004.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\Neutrogena.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\Neutrogena.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\SRGanier.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\SRGanier.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\SRGoodnDoc.jpeg",
+      "PackagePath": "staticwebassets\\images\\product\\SRGoodnDoc.jpeg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\SRKlairs.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\SRKlairs.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\SRMCetaphil.png",
+      "PackagePath": "staticwebassets\\images\\product\\SRMCetaphil.png"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\SRMNivea.png",
+      "PackagePath": "staticwebassets\\images\\product\\SRMNivea.png"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\SRMOxy.png",
+      "PackagePath": "staticwebassets\\images\\product\\SRMOxy.png"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\SRMSimple.png",
+      "PackagePath": "staticwebassets\\images\\product\\SRMSimple.png"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\SRSkin.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\SRSkin.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\TTCocoon.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\TTCocoon.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\TTGarnier.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\TTGarnier.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\TTLOreal.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\TTLOreal.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\TTOlay.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\TTOlay.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\TTSenka.jpeg",
+      "PackagePath": "staticwebassets\\images\\product\\TTSenka.jpeg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\Vichy.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\Vichy.jpg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\database.sql",
+      "PackagePath": "staticwebassets\\images\\product\\database.sql"
+    },
+    {
       "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\fc9da19e-9b23-46ff-97fc-b39097f8fc02.jpeg",
       "PackagePath": "staticwebassets\\images\\product\\fc9da19e-9b23-46ff-97fc-b39097f8fc02.jpeg"
+    },
+    {
+      "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\product\\flash_sale.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\flash_sale.jpg"
     },
     {
       "Id": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\wwwroot\\images\\viewcustomer\\about_2.jpg",

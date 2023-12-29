@@ -132,18 +132,19 @@
                             <i class="far fa-bars"></i>
                         </div>
                         <ul class="wsus__menu_item">
-                            <li><a class="active" href="index.html">home</a></li>
-                            <li><a href="vendor.html">AboutUs</a></li>
+                            <li><a class="active" href="/">home</a></li>
                             <li><a asp-area="Customer" asp-controller="Product" asp-action="Index"
-                                    asp-route-category="@Product.listCategory[0]">Sữa rửa mặt</a></li>
+                                    asp-route-category="Sữa rửa mặt">Sữa rửa mặt</a></li>
                             <li><a asp-area="Customer" asp-controller="Product" asp-action="Index"
-                                    asp-route-category="@Product.listCategory[1]">Kem chống nắng</a></li>
+                                    asp-route-category="Kem chống nắng">Kem chống nắng</a></li>
                             <li><a asp-area="Customer" asp-controller="Product" asp-action="Index"
-                                    asp-route-category="@Product.listCategory[2]">Serum</a></li>
+                                    asp-route-category="Serum">Serum</a></li>
                             <li><a asp-area="Customer" asp-controller="Product" asp-action="Index"
-                                    asp-route-category="@Product.listCategory[3]">Kem dưỡng ẩm</a></li>
+                                    asp-route-category="Kem dưỡng ẩm">Kem dưỡng ẩm</a></li>
                             <li><a asp-area="Customer" asp-controller="Product" asp-action="Index"
-                                    asp-route-category="@Product.listCategory[4]">Tẩy trang</a></li>
+                                    asp-route-category="Nước tẩy trang">Nước tẩy trang</a></li>
+                            <li><a asp-area="Customer" asp-controller="Product" asp-action="Index"
+                                    asp-route-category="Nước tẩy trang">Tìm thông tin đơn hàng</a></li>
                         </ul>
                         @if (!SignInManager.IsSignedIn(User))
                         {
@@ -234,15 +235,17 @@
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <ul class="wsus_mobile_menu_category">
                             <li><a asp-area="Customer" asp-controller="Product" asp-action="Index"
-                                    asp-route-category="@Product.listCategory[0]">Sữa rửa mặt</a></li>
+                                    asp-route-category="Sữa rửa mặt">Sữa rửa mặt</a></li>
                             <li><a asp-area="Customer" asp-controller="Product" asp-action="Index"
-                                    asp-route-category="@Product.listCategory[1]">Kem chống nắng</a></li>
+                                    asp-route-category="Kem chống nắng">Kem chống nắng</a></li>
                             <li><a asp-area="Customer" asp-controller="Product" asp-action="Index"
-                                    asp-route-category="@Product.listCategory[2]">Serum</a></li>
+                                    asp-route-category="Serum">Serum</a></li>
                             <li><a asp-area="Customer" asp-controller="Product" asp-action="Index"
-                                    asp-route-category="@Product.listCategory[3]">Kem dưỡng ẩm</a></li>
+                                    asp-route-category="Kem dưỡng ẩm">Kem dưỡng ẩm</a></li>
                             <li><a asp-area="Customer" asp-controller="Product" asp-action="Index"
-                                    asp-route-category="@Product.listCategory[4]">Tẩy trang</a></li>
+                                    asp-route-category="Nước tẩy trang">Nước tẩy trang</a></li>
+                                    <li><a asp-area="Customer" asp-controller="Product" asp-action="Index"
+                                    asp-route-category="Nước tẩy trang">Tìm thông tin đơn hàng</a></li>
                         </ul>
                     </div>
                 </div>
@@ -406,6 +409,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
+"></script>
     <!--main/custom js-->
     <script src="~/js/customer/main.js"></script>
     @await RenderSectionAsync("Scripts", required: false)

@@ -123,7 +123,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj": {
+                "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

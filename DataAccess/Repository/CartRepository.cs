@@ -34,7 +34,13 @@ namespace DataAccess.Repository
             double result = 0;
             foreach (Cart c in carts)
             {
+                if (c.Product!=null){
                 result += c.Quantity * c.Product.Price;
+                }else {
+                    Product product = _db.Products.Find(c.ProductId);
+                    c.Product = product;
+                    result+=c.Quantity*product.Price;
+                }
             }
             return result;
         }

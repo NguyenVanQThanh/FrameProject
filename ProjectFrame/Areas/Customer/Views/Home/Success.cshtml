@@ -1,138 +1,146 @@
-
 @using Models
 @model CartViewModel
 
-@if(TempData["orderId"]!= null) {
-    <h1>@TempData["orderId"]</h1>
+@if (TempData["orderId"] != null)
+{
+    <div style="text-align: center !important; heigh: 800px !important;">
+        <h1>ĐƠN HÀNG CỦA BẠN ĐÃ ĐẶT THÀNH CÔNG VỚI MÃ ĐƠN HÀNG LÀ: @TempData["orderId"]</h1>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div style="text-align: center !important; heigh: 800px !important;">
+        <div class="alert alert-danger text-center">@TempData["Error"]</div>
+    </div>
 }
 
-@section JS_Specific{
+@section JS_Specific {
 
-<script>
-    $(document).ready(function(){
-        $.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});   
-
-// Khi click vào + số lượng
-        $('.product-increment').on('click', function(){
-            let input = $(this).siblings('.product-qty');
-            let quantity = parseInt(input.val())+1;
-            let cartId = input.data('cartid');
-            //let url = "/Cart/update-quantity"
-            input.val(quantity);
-            $.ajax({
-                url: "/Cart/update-quantity",
-                method: 'POST',
-                data: {
-                    cartId: cartId,
-                    quantity: quantity
-                },
-                success:function(data){
-                    if(data.status==='success'){
-                        let productId = '#'+cartId;
-                        $(productId).text(data.product_total);
-                        
-                        let subtotalElement = $('.cart_subtotal');
-                        let currentSubtotal = parseFloat(subtotalElement.text());
-                        let updatedSubtotal = currentSubtotal + data.product_price;
-                        subtotalElement.text(updatedSubtotal);
-
-
-                        toastr.success(data.message);
-                    }else if(data.status === 'error'){
-                        toastr.error(data.message);
-                    }
-                },
-                error: function(data){
-
+    <script>
+        $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
-            })
-        })
-        $('.product-decrement').on('click', function(){
-            let input = $(this).siblings('.product-qty');
-            let quantity = parseInt(input.val())-1;
-            let enable = true;
-            let cartId = input.data('cartid');
-            if(quantity < 1){
-                quantity = 1;
-                enable = false;
-            } else {
-                enable = true;
-            }
-            input.val(quantity);
+            });
 
-            $.ajax({
-                url: "/Cart/update-quantity",
-                method: 'POST',
-                data: {
-                    cartId: cartId,
-                    quantity: quantity
-                },
-                success:function(data){
-                    if(data.status==='success'){
-                        let productId = '#'+cartId;
-                        $(productId).text(data.product_total);
-                        if(enable){
+            // Khi click vào + số lượng
+            $('.product-increment').on('click', function () {
+                let input = $(this).siblings('.product-qty');
+                let quantity = parseInt(input.val()) + 1;
+                let cartId = input.data('cartid');
+                //let url = "/Cart/update-quantity"
+                input.val(quantity);
+                $.ajax({
+                    url: "/Cart/update-quantity",
+                    method: 'POST',
+                    data: {
+                        cartId: cartId,
+                        quantity: quantity
+                    },
+                    success: function (data) {
+                        if (data.status === 'success') {
+                            let productId = '#' + cartId;
+                            $(productId).text(data.product_total);
+
                             let subtotalElement = $('.cart_subtotal');
                             let currentSubtotal = parseFloat(subtotalElement.text());
-                            let updatedSubtotal = currentSubtotal - data.product_price;
+                            let updatedSubtotal = currentSubtotal + data.product_price;
                             subtotalElement.text(updatedSubtotal);
+
+
                             toastr.success(data.message);
+                        } else if (data.status === 'error') {
+                            toastr.error(data.message);
                         }
-                       
+                    },
+                    error: function (data) {
 
-
-                    }else if(data.status === 'error'){
-                        toastr.error(data.message);
                     }
-
-                },
-                error: function(data){
-
-                }
+                })
             })
-        })
-// Xóa cart
-        $('.clear_cart').on('click', function(e){
-            e.preventDefault();
-            Swal.fire({
-          title: "Are you sure?",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-          if (result.isConfirmed) {
-            $.ajax({
-              type: 'get',  
-              url: "/Cart/clear",
-              success: function(data){
-                if(data.status === 'success'){
-                    window.location.reload();
+            $('.product-decrement').on('click', function () {
+                let input = $(this).siblings('.product-qty');
+                let quantity = parseInt(input.val()) - 1;
+                let enable = true;
+                let cartId = input.data('cartid');
+                if (quantity < 1) {
+                    quantity = 1;
+                    enable = false;
+                } else {
+                    enable = true;
                 }
-                
-                
-              },
-              error: function(xhr, status,error){
-                console.log(error);
-              }
+                input.val(quantity);
+
+                $.ajax({
+                    url: "/Cart/update-quantity",
+                    method: 'POST',
+                    data: {
+                        cartId: cartId,
+                        quantity: quantity
+                    },
+                    success: function (data) {
+                        if (data.status === 'success') {
+                            let productId = '#' + cartId;
+                            $(productId).text(data.product_total);
+                            if (enable) {
+                                let subtotalElement = $('.cart_subtotal');
+                                let currentSubtotal = parseFloat(subtotalElement.text());
+                                let updatedSubtotal = currentSubtotal - data.product_price;
+                                subtotalElement.text(updatedSubtotal);
+                                toastr.success(data.message);
+                            }
+
+
+
+                        } else if (data.status === 'error') {
+                            toastr.error(data.message);
+                        }
+
+                    },
+                    error: function (data) {
+
+                    }
+                })
             })
-         
-  }
-});
+            // Xóa cart
+            $('.clear_cart').on('click', function (e) {
+                e.preventDefault();
+                Swal.fire({
+                    title: "Are you sure?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            type: 'get',
+                            url: "/Cart/clear",
+                            success: function (data) {
+                                if (data.status === 'success') {
+                                    window.location.reload();
+                                }
+
+
+                            },
+                            error: function (xhr, status, error) {
+                                console.log(error);
+                            }
+                        })
+
+                    }
+                });
+            })
+
+
+
+
+
+
+
         })
+    </script>
 
-        
-
-
-      
-    
-
-    })
-</script>
-    
 }
