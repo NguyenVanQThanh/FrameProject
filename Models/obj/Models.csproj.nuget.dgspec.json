@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj": {}
+    "D:\\_BTCode\\FrameProject\\FrameProject\\Models\\Models.csproj": {}
   },
   "projects": {
-    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj": {
+    "D:\\_BTCode\\FrameProject\\FrameProject\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj",
+        "projectUniqueName": "D:\\_BTCode\\FrameProject\\FrameProject\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\obj\\",
+        "projectPath": "D:\\_BTCode\\FrameProject\\FrameProject\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\nguye_b1apmci\\.nuget\\packages\\",
+        "outputPath": "D:\\_BTCode\\FrameProject\\FrameProject\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\LAPTOP ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\nguye_b1apmci\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -69,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },

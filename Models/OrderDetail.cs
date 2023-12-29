@@ -27,5 +27,7 @@ namespace Models
 
         [Required]
         public int Quantity { set; get; }
+
+        
     }
 }

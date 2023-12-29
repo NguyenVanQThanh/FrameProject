@@ -5,109 +5,90 @@
   ViewData["Title"] = "Profile";
   ViewData["ActivePage"] = ManageNavPages.Index;
 }
-
 <div class="row">
-  <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
-    <div class="dashboard_content">
-      <div class="wsus__dashboard">
-        <div class="row">
-          <div class="col-xl-2 col-6 col-md-4">
-            <a class="wsus__dashboard_item red" href="dsahboard_order.html">
-              <i class="far fa-address-book"></i>
-              <p>order</p>
-            </a>
-          </div>
-          <div class="col-xl-2 col-6 col-md-4">
-            <a class="wsus__dashboard_item green" href="dsahboard_download.html">
-              <i class="fal fa-cloud-download"></i>
-              <p>download</p>
-            </a>
-          </div>
-          <div class="col-xl-2 col-6 col-md-4">
-            <a class="wsus__dashboard_item sky" href="dsahboard_review.html">
-              <i class="fas fa-star"></i>
-              <p>review</p>
-            </a>
-          </div>
-          <div class="col-xl-2 col-6 col-md-4">
-            <a class="wsus__dashboard_item blue" href="dsahboard_wishlist.html">
-              <i class="far fa-heart"></i>
-              <p>wishlist</p>
-            </a>
-          </div>
-          <div class="col-xl-2 col-6 col-md-4">
-            <a class="wsus__dashboard_item orange" href="dsahboard_profile.html">
-              <i class="fas fa-user-shield"></i>
-              <p>profile</p>
-            </a>
-          </div>
-          <div class="col-xl-2 col-6 col-md-4">
-            <a class="wsus__dashboard_item purple" href="dsahboard_address.html">
-              <i class="fal fa-map-marker-alt"></i>
-              <p>address</p>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xl-12">
-            <div class="wsus__message">
-              <h4>personal information</h4>
-              <form method="post" asp-area="Identity" asp-page="/Account/Manage/Index">
-                <div class="row">
-                  <div class="col-xl-6">
-                    <div class="wsus__single_inout">
-                      <label>Name</label>
-                      <input asp-for="Input.user.Name" type="text" placeholder="Name">
+        <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
+          <div class="dashboard_content mt-2 mt-md-0">
+            <h3><i class="far fa-user"></i>Thông tin cá nhân</h3>
+            <div class="wsus__dashboard_profile">
+              <div class="wsus__dash_pro_area">
+                <h4>Thông tin</h4>
+                <form action="/Identity/Profile/Update" method="POST" enctype="multipart/form-data">
+                        <div class="col-xl-6 col-md-6">
+                          <div class="wsus__dash_pro_single">
+                            <i class="fas fa-user-tie"></i>
+                            <input type="text" placeholder="Name" name="name" asp-for="Input.user.Name">
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                          <div class="wsus__dash_pro_single">
+                            <i class="fas fa-user-tie"></i>
+                            <input type="text" placeholder="Address" name="address"  asp-for="Input.user.Address">
+                          </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                          <div class="wsus__dash_pro_single">
+                            <i class="fa-solid fa-phone-flip"></i>
+                            <input type="text" placeholder="Phone" name="phone"  asp-for="Input.user.Phone" required>
+                          </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                          <div class="wsus__dash_pro_single">
+                            <i class="fal fa-envelope-open"></i>
+                            <input type="email" placeholder="Email" readonly  value="@Input.user.Email" readonly>
+                          </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="wsus__dash_pro_single">
+                              <i class="fal fa-envelope-open"></i>
+                              <input type="number" minlength="12" maxlength="12" placeholder="PostCode" name="postcode"  asp-for="Input.user.PostCode" required>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="wsus__dash_pro_single">
+                              <i class="fal fa-envelope-open"></i>
+                              <input asp-for="Input.user.Birthday" type="date" value="Input.user.Birthday.ToString("yyyy-MM-dd")" required>
+                            </div>
+                        </div>
+                        <div class="col-xl-12">
+                            <button class="common_btn mb-4 mt-2" type="submit">Cập nhật</button>
+                        </div>
+                </form>
+
+                    <div class="wsus__dash_pass_change mt-2">
+                      <form action="{{ route('customer.profile.update.password') }}" method="POST">
+                          <div class="row">
+                            <h4>Cập nhật mật khẩu</h4>
+                            <div class="col-xl-4 col-md-6">
+                              <div class="wsus__dash_pro_single">
+                                <i class="fas fa-unlock-alt"></i>
+                                <input type="password" placeholder="Current Pass" name="current_password">
+                              </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                              <div class="wsus__dash_pro_single">
+                                <i class="fas fa-unlock-alt"></i>
+                                <input type="password" placeholder="New Pass" name="password">
+                              </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                              <div class="wsus__dash_pro_single">
+                                <i class="fas fa-unlock-alt"></i>
+                                <input type="password" placeholder="Confirm Pass" name="password_confirmation">
+                              </div>
+                            </div>
+                            <div class="col-xl-12">
+                              <button class="common_btn" type="submit">Cập nhật</button>
+                            </div>
+                          </div>
+                      </form>
                     </div>
+                    <partial name="ResetPassword"/>
                   </div>
-                  <div class="col-xl-6">
-                    <div class="wsus__single_inout">
-                      <label>Postcode</label>
-                      <input asp-for="Input.user.PostCode" type="text" placeholder="Postcode">
-                    </div>
-                  </div>
-                  <div class="col-xl-6">
-                    <div class="wsus__single_inout">
-                      <label>email</label>
-                      <input asp-for="Input.user.Email" type="email" readonly placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="col-xl-6">
-                    <div class="wsus__single_inout">
-                      <label>phone</label>
-                      <input asp-for="Input.PhoneNumber" type="number" placeholder="Phone" id="phone">
-                    </div>
-                  </div>
-                  <div class="col-xl-12">
-                    <div class="wsus__single_inout">
-                      <label>Address</label>
-                      <select name="" id="province">
-                      </select>
-                      <select name="" id="district">
-                        <option value="">chọn quận</option>
-                      </select>
-                      <select name="" id="ward">
-                        <option value="">chọn phường</option>
-                      </select>
-                      <input asp-for="Input.user.Address" type="text" id="address" placeholder="Chọn Địa chỉ" readonly>
-                    </div>
-                  </div>
-                  <div class="col-xl-12">
-                    @* <div class="wsus__single_inout">
-                      <label>about yourself</label>
-                      <textarea cols="3" rows="3" placeholder="Write About Yourself"></textarea>
-                    </div>
-                  </div> *@
-                </div>
-                <button class="common_btn" type="submit">update</button>
-              </form>
+                
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
 @section Scripts {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
