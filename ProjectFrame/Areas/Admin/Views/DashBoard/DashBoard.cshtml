@@ -1,0 +1,154 @@
+@using Models.ViewModels
+@model AdminDashboardViewModel
+
+@section CSS_Lib{
+    @* <link rel="stylesheet" href="~/modules/datatables/datatables.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css" asp-append-version="true"> *@
+
+    <link rel="stylesheet" href="~/modules/jqvmap/dist/jqvmap.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/modules/summernote/summernote-bs4.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/modules/owlcarousel2/dist/assets/owl.carousel.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/modules/owlcarousel2/dist/assets/owl.theme.default.min.css" asp-append-version="true">
+}  
+@section JS_Lib{
+    <script src="~/modules/jquery.sparkline.min.js" asp-append-version="true"></script>
+    <script src="~/modules/chart.min.js" asp-append-version="true"></script>
+    <script src="~/modules/owlcarousel2/dist/owl.carousel.min.js" asp-append-version="true"></script>
+    <script src="~/modules/summernote/summernote-bs4.js" asp-append-version="true"></script>
+    <script src="~/modules/chocolat/dist/js/jquery.chocolat.min.js" asp-append-version="true"></script>
+}
+
+<section class="section">
+<div class="section-header">
+    <h1>Trang chủ</h1>
+</div>
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="card card-statistic-1">
+            <div class="card-icon bg-primary">
+                <i class="far fa-user"></i>
+            </div>
+            <div class="card-wrap">
+                <div class="card-header">
+                    <h4>Tổng đơn hàng</h4>
+                </div>
+                <div class="card-body">
+                    @Model.numberOrder
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="card card-statistic-1">
+            <div class="card-icon bg-danger">
+                <i class="far fa-newspaper"></i>
+            </div>
+            <div class="card-wrap">
+                <div class="card-header">
+                    <h4>Số đơn hàng thành công</h4>
+                </div>
+                <div class="card-body">
+                    @Model.numberOrderSuccess
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="card card-statistic-1">
+            <div class="card-icon bg-primary">
+                <i class="far fa-user"></i>
+            </div>
+            <div class="card-wrap">
+                <div class="card-header">
+                    <h4>Số khách hàng</h4>
+                </div>
+                <div class="card-body">
+                    @Model.numberUser
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="card card-statistic-1">
+            <div class="card-icon bg-danger">
+                <i class="far fa-newspaper"></i>
+            </div>
+            <div class="card-wrap">
+                <div class="card-header">
+                    <h4>Số sản phẩm</h4>
+                </div>
+                <div class="card-body">
+                    @Model.numberProduct
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-12 col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <canvas id="myChart" height="182"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+@section JS_Specific {
+    <script>
+        "use strict";
+
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                datasets: [{
+                    label: 'Sales',
+                    data: @Json.Serialize(Model.totalInYear),
+                    borderWidth: 2,
+                    backgroundColor: 'rgba(63,82,227,.8)',
+                    borderWidth: 0,
+                    borderColor: 'transparent',
+                    pointBorderWidth: 0,
+                    pointRadius: 3.5,
+                    pointBackgroundColor: 'transparent',
+                    pointHoverBackgroundColor: 'rgba(63,82,227,.8)',
+                }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        gridLines: {
+                            // display: false,
+                            drawBorder: false,
+                            color: '#f2f2f2',
+                        },
+                        ticks: {
+                            beginAtZero: true,
+                            stepSize: 150000,
+                            callback: function (value, index, values) {
+                                return '$' + value;
+                            }
+                        }
+                    }],
+                    xAxes: [{
+                        gridLines: {
+                            display: false,
+                            tickMarkLength: 15,
+                        }
+                    }]
+                },
+            }
+        });
+
+    </script>
+}

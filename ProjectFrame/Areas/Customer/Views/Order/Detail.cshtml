@@ -92,25 +92,26 @@
                         <div class="row mt-4">
                           <div class="col-lg-8">
                             <div class="col-md-4">
-                                {{-- <div class="form-group">
+                                @* <div class="form-group">
                                     <label for="">Trạng thái đơn hàng</label>
                                     <select name="order_status" class="form-control" id="order_status" data-id="{{ $order->id }}" >
                                         @foreach (var obj in Model.listStatus){
 
-                                            <option @{
-                                                (if (Model.order.Status.Equals))
-                                            } value="@obj">@obj</option>
-
+                                            @if(obj.Equals(Model.order.Status)){
+                                                <option selected value="@obj">@obj</option>
+                                            }else{
+                                                <option value="@obj">@obj</option>
+                                            }
                                         }
                                             
                                     </select>
-                                </div> --}}
+                                </div> *@
                             </div>
                           </div>
                           <div class="col-lg-4 text-right">
                             <div class="invoice-detail-item">
                               <div class="invoice-detail-name">Tổng hóa đơn</div>
-                              <div class="invoice-detail-value invoice-detail-value-lg">{{ $order->total }}</div>
+                              <div class="invoice-detail-value invoice-detail-value-lg">@Model.total.ToString()</div>
                             </div>
                           </div>
                         </div>
@@ -120,14 +121,14 @@
 
                   <hr>
                   <div class="text-md-right">
-                    @if ($order->status === 'Đã đặt hàng' || $order->status === 'Đang chuẩn bị')
-                     <form action="{{ route('customer.cancel-order.cancel') }}" style="margin-top: 100px" method="POST">
-                      @csrf
-                      <input type="text" name="idorder" id="" value="{{ $order->id }}" hidden>
+                    @if (Model.order.Status.Equals("Đã đặt hàng") || Model.order.Status.Equals("Đang chuẩn bị")){
+
+                     <form action="/Order/update/@Model.order.Id" style="margin-top: 100px" method="POST">
+                      <input type="text" name="idorder" id="" value="@Model.order.Id" hidden>
                       <div><textarea name="description" type="text" style="width:300px; height:50px; margin-bottom:20px" placeholder="Tại sao bạn muốn hủy đơn?"></textarea></div>
                         <button class="btn btn-warning btn-icon icon-left">Hủy đơn hàng</button>
                      </form>
-                    @endif
+                    }
                   </div>
                 </div>
               </div>

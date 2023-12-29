@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="~/modules/summernote/summernote-bs4.css" asp-append-version="true">
     <link rel="stylesheet" href="~/modules/owlcarousel2/dist/assets/owl.carousel.min.css" asp-append-version="true">
     <link rel="stylesheet" href="~/modules/owlcarousel2/dist/assets/owl.theme.default.min.css"
-        asp-append-version="true"> *@
-    @RenderSection("CSS_Lib",false)
+    asp-append-version="true"> *@
+    @RenderSection("CSS_Lib", false)
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="~/css/admin/style.css" asp-append-version="true">
@@ -45,53 +45,22 @@
                         <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i
                                     class="fas fa-search"></i></a></li>
                     </ul>
+
                 </form>
                 <ul class="navbar-nav navbar-right">
 
-                    <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
-                            class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
-                        <div class="dropdown-menu dropdown-list dropdown-menu-right">
-                            <div class="dropdown-header">Notifications
-                                <div class="float-right">
-                                    <a href="#">Mark All As Read</a>
-                                </div>
-                            </div>
-                            <div class="dropdown-list-content dropdown-list-icons">
-                                <a href="#" class="dropdown-item dropdown-item-unread">
-                                    <div class="dropdown-item-icon bg-primary text-white">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <div class="dropdown-item-desc">
-                                        Template update is available now!
-                                        <div class="time text-primary">2 Min Ago</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="dropdown-footer text-center">
-                                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </li>
                     <li class="dropdown"><a href="#" data-toggle="dropdown"
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-                            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div>
+                            <div class="d-sm-none d-lg-inline-block">Hello</div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <div class="dropdown-title">Logged in 5 min ago</div>
-                            <a href="features-profile.html" class="dropdown-item has-icon">
-                                <i class="far fa-user"></i> Profile
-                            </a>
-                            <a href="features-activities.html" class="dropdown-item has-icon">
-                                <i class="fas fa-bolt"></i> Activities
-                            </a>
-                            <a href="features-settings.html" class="dropdown-item has-icon">
-                                <i class="fas fa-cog"></i> Settings
-                            </a>
                             <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item has-icon text-danger">
-                                <i class="fas fa-sign-out-alt"></i> Logout
-                            </a>
+
+                            <form method="POST" action="/Account/Logout" asp-route-returnUrl="~/">
+                                <button type="submit" class="dropdown-item has-icon text-danger">
+                                    <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                                </button>
+                            </form>
                         </div>
                     </li>
                 </ul>
@@ -112,10 +81,14 @@
                             <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i>
                                 <span>Modules</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" asp-area="Admin" asp-controller="Customer" asp-action="Index">QLKH</a></li>
-                                <li><a class="nav-link" asp-area="Admin" asp-controller="Product" asp-action="Index">QLSP</a></li>
-                                <li><a class="nav-link" asp-area="Admin" asp-controller="Order" asp-action="Index">QLFB</a></li>
-                                <li><a class="nav-link" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Dashboard</a></li>
+                                <li><a class="nav-link" asp-area="Admin" asp-controller="Customer"
+                                        asp-action="Index">QLKH</a></li>
+                                <li><a class="nav-link" asp-area="Admin" asp-controller="Product"
+                                        asp-action="Index">QLSP</a></li>
+                                <li><a class="nav-link" asp-area="Admin" asp-controller="Order"
+                                        asp-action="Index">QLFB</a></li>
+                                <li><a class="nav-link" asp-area="Admin" asp-controller="Dashboard"
+                                        asp-action="Index">Dashboard</a></li>
                             </ul>
                         </li>
             </div>
@@ -154,7 +127,7 @@
     @RenderSection("JS_Lib", false)
 
     <!-- Page Specific JS File -->
-    @RenderSection("JS_Specific",false)
+    @RenderSection("JS_Specific", false)
     @* <script src="~/js/page/index.js"></script> *@
 
     <!-- Template JS File -->

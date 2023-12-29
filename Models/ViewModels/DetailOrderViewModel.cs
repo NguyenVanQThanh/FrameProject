@@ -9,6 +9,7 @@ namespace Models.ViewModels
     {
         public List<OrderDetail> orderDetails {set; get;}
         public Order order {set; get;}
+        public decimal total {set; get;}
         public User? user {set; get;}
         public List<string> listStatus = new List<string>{
             "Đã đặt hàng",
