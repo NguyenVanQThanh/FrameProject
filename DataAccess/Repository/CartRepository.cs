@@ -17,9 +17,35 @@ namespace DataAccess.Repository
             _db = db;
         }
 
+        public IEnumerable<Cart> FindCartOfUser(string userId)
+        {
+            List<Cart> carts =  _db.Carts.Where(u=> u.UserId == userId).ToList();
+            return carts;
+            
+        }
+
         public void Save()
         {
            _db.SaveChanges();
+        }
+
+        public double Total(List<Cart> carts)
+        {
+            double result = 0;
+            foreach (Cart c in carts)
+            {
+                result += c.Quantity * c.Product.Price;
+            }
+            return result;
+        }
+
+        public double totalCart(List<Cart> carts)
+        {
+            double total = 0;
+            foreach(var obj in carts){
+                total += obj.Quantity * obj.Product.Price;
+            }
+            return total;
         }
 
         public void Update(Cart cart)

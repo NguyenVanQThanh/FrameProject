@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\DataAccess\\DataAccess.csproj": {}
+    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\DataAccess\\DataAccess.csproj": {
+    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\DataAccess\\DataAccess.csproj",
+        "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\DataAccess\\obj\\",
+        "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LAPTOP ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Models\\Models.csproj": {
-                "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Models\\Models.csproj"
+              "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj": {
+                "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj"
               },
-              "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Utility\\Utility.csproj": {
-                "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Utility\\Utility.csproj"
+              "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj": {
+                "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj"
               }
             }
           }
@@ -100,14 +100,14 @@
         }
       }
     },
-    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Models\\Models.csproj": {
+    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Models\\Models.csproj",
+        "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Models\\Models.csproj",
+        "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj",
         "packagesPath": "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Models\\obj\\",
+        "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LAPTOP ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -165,14 +165,14 @@
         }
       }
     },
-    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Utility\\Utility.csproj": {
+    "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Utility\\Utility.csproj",
+        "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj",
         "projectName": "Utility",
-        "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Utility\\Utility.csproj",
+        "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj",
         "packagesPath": "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Utility\\obj\\",
+        "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LAPTOP ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

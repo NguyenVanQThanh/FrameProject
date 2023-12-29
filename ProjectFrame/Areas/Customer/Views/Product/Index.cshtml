@@ -34,7 +34,7 @@
                         @foreach(var obj in Model){
                         <div class="col-xl-3 col-sm-6 col-lg-4">
                             <div class="wsus__product_item">
-                                <a class="" asp-controller="Product" asp-action="Detail" asp-route-id="@obj.Id">
+                                <a class="" asp-area="Customer" asp-controller="Product" asp-action="Detail" asp-route-productId="@obj.Id">
                                     <img src="@obj.ImageUrl" alt="product" class="w-100" />
                                 </a>
                                 @* <ul class="wsus__single_pro_icon">
@@ -54,7 +54,7 @@
                                     </p> *@
                                     <a class="wsus__pro_name" href="#">@obj.Name</a>
                                     <p class="wsus__price">@obj.Price VND</p>
-                                    <a class="add_cart" asp-controller="Cart" asp-action="AddCart" asp-route-ProductId="@obj.Id">add to cart</a>
+                                    <a class="add_cart" asp-area="Customer" asp-controller="Product" asp-action="Detail" asp-route-productId="@obj.Id">Detail</a>
                                 </div>
                             </div>
                         </div>

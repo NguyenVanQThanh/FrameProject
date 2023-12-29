@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Utility;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Utility.MiddleWare;
+using Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>().AddSignInManager<SignInManager<IdentityUser>>()
     .AddDefaultTokenProviders();
+// builder.Services.AddIdentity<User, IdentityRole>()
+//     .AddEntityFrameworkStores<ApplicationDbContext>().AddSignInManager<SignInManager<User>>()
+//     .AddDefaultTokenProviders();
 
 //builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 //    .AddCookie(options =>

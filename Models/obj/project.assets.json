@@ -1054,11 +1054,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Models\\Models.csproj",
+      "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj",
       "projectName": "Models",
-      "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Models\\Models.csproj",
+      "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Models\\obj\\",
+      "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LAPTOP ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

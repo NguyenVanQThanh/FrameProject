@@ -4540,11 +4540,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Utility\\Utility.csproj",
+      "projectUniqueName": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj",
       "projectName": "Utility",
-      "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Utility\\Utility.csproj",
+      "projectPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj",
       "packagesPath": "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Utility\\obj\\",
+      "outputPath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LAPTOP ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -12,6 +12,7 @@ namespace ProjectFrame.Areas.Customer.Controllers
         public ProductController(IUnitOfWork unitOfWork){
             _unitOfWork = unitOfWork;
         }
+        [Route("/Product/Category/{category}")]
         public IActionResult Index(string? category)
         {
             List<Product> products = new List<Product>();
@@ -21,6 +22,12 @@ namespace ProjectFrame.Areas.Customer.Controllers
                 products = _unitOfWork.Product.GetForCategory(category).ToList();
             }
             return View(products);
+        }
+
+        [Route("/Product/{productId}")]
+        public IActionResult Detail(int productId){
+            Product product = _unitOfWork.Product.Get(u=>u.Id==productId);
+            return View("Detail",product);
         }
     }
 }

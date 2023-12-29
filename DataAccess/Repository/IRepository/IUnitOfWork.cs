@@ -12,6 +12,8 @@ namespace DataAccess.Repository.IRepository
         
         IProductRepository Product { get; }
         ICartRepository Cart { get; }
+        IOrderRepository Order {get; }
+        IOrderDetailRepository OrderDetail {get; }
         void Save();
     }
 }

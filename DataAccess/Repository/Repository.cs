@@ -21,6 +21,7 @@ namespace DataAccess.Repository
             dbSet = _db.Set<T>();
         }
 
+
         void IRepository<T>.Add(T entity)
         {
             dbSet.Add(entity);
@@ -28,19 +29,49 @@ namespace DataAccess.Repository
 
         void IRepository<T>.DeleteRange(IEnumerable<T> entity)
         {
-            throw new NotImplementedException();
+            foreach(var obj in entity){
+                _db.Remove(obj);
+            }
+            _db.SaveChanges();
         }
 
-        T IRepository<T>.Get(Expression<Func<T, bool>> filter)
+        T IRepository<T>.Get(Expression<Func<T, bool>> filter, string? includeProperties = null, bool tracked = false)
         {
-            IQueryable<T> query = dbSet;
+            IQueryable<T> query;
+            if (tracked)
+            {
+                query = dbSet;
+            } else
+            {
+                query = dbSet.AsNoTracking();
+            }
             query = query.Where(filter);
+            if (!string.IsNullOrEmpty(includeProperties))
+            {
+                foreach (var includeProp in includeProperties
+                    .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProp);
+                }
+            }
             return query.FirstOrDefault();
         }
 
-        IEnumerable<T> IRepository<T>.GetAll()
+        IEnumerable<T> IRepository<T>.GetAll(Expression<Func<T, bool>>? filter, string? includeProperties = null)
         {
             IQueryable<T> query = dbSet;
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+            if (!string.IsNullOrEmpty(includeProperties))
+            {
+                foreach (var includeProp in includeProperties
+                    .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProp);
+                }
+            }
             return query.ToList();
         }
 

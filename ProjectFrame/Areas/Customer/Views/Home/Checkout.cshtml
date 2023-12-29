@@ -1,0 +1,274 @@
+@using Models
+@model CheckoutViewModel
+<!--============================
+        BREADCRUMB START
+    ==============================-->
+<section id="wsus__breadcrumb">
+    <div class="wsus_breadcrumb_overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4>check out</h4>
+                    <ul>
+                        <li><a href="/">home</a></li>
+                        <li><a href="#">check out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--============================
+        BREADCRUMB END
+    ==============================-->
+
+
+<!--============================
+        CHECK OUT PAGE START
+    ==============================-->
+<section id="wsus__cart_view">
+    <div class="container">
+        <form class="wsus__checkout_form" method="post" action="{{ route('customer.checkout.form-submit') }}" id="form">
+            <div class="row">
+                <div class="col-xl-8 col-lg-7">
+                    <div class="wsus__check_form">
+                        <h5>chi tiết đơn hàng </h5>
+                        <div class="row">
+                            <div class="col-md-6 col-lg-12 col-xl-6">
+                                <div class="wsus__check_single_form">
+                                    @if(Model.user != null) {
+                                        <input id="ten" type="text" placeholder="Tên" value="@Model.user.Name" name="ten">
+                                    } else {
+                                    <input id="ten" type="text" placeholder="Tên" value="" name="ten">
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12 col-xl-6">
+                                <div class="wsus__check_single_form">
+                                    <select class="select_2" name="state" id="province">
+                                        <option value="">Thành phố</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12 col-xl-6">
+                                <div class="wsus__check_single_form">
+                                    <select class="select_2" name="state" id="district">
+                                        <option value="">Tỉnh</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12 col-xl-6">
+                                <div class="wsus__check_single_form">
+                                    <select class="select_2" name="state" id="ward">
+                                        <option value="">Phường</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12 col-xl-6">
+                                <div class="wsus__check_single_form">
+                                    <input id="diachi" type="text" placeholder="Địa chỉ nhà">
+                                </div>
+                            </div>
+                            
+                            <input hidden id="result" name="diachi" type="text">
+                            <div class="col-md-6 col-lg-12 col-xl-6">
+                                <div class="wsus__check_single_form">
+                                    <input minlength="10" maxlength="10" id="sodienthoai" type="number"
+                                        placeholder="Số điện thoại người nhận hàng" name="sdt">
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-md-12 col-lg-12 col-xl-12">
+                                <div class="wsus__check_single_form">
+                                    <h5>Ghi chú cho người bán</h5>
+                                    <textarea cols="3" rows="4" placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-5">
+                <div class="wsus__order_details" id="sticky_sidebar">
+                    <p class="wsus__product">Phương thức thanh toán</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="COD" value="COD" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Thanh toán khi nhận hàng
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="wallet" value="MOMO">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Ví điện tử
+                        </label>
+                    </div>
+                    <div class="wsus__order_details_summery" id="total-box">
+                        <p><b>total:</b> <span class="total">@Model.total</span> vnđ</p>
+                        <input hidden value="@Model.total" name="total" type="text" readonly>
+                    </div>
+
+                    <button type="submit" name="payUrl" href="#" id="submitCheckoutForm" class="common_btn">Đặt
+                        hàng</button>
+                </div>
+            </div>
+    </form>
+    </div>
+    </div>
+</section>
+
+
+<!--============================
+        CHECK OUT PAGE END
+    ==============================-->
+@section JS_Specific{
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+    integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    let result;
+const host = "https://provinces.open-api.vn/api/";
+var callAPI = (api) => {
+    return axios.get(api)
+        .then((response) => {
+            renderData(response.data, "province");
+        });
+}
+callAPI('https://provinces.open-api.vn/api/?depth=1');
+var callApiDistrict = (api) => {
+    return axios.get(api)
+        .then((response) => {
+            renderData(response.data.districts, "district");
+        });
+}
+var callApiWard = (api) => {
+    return axios.get(api)
+        .then((response) => {
+            renderData(response.data.wards, "ward");
+        });
+}
+
+var renderData = (array, select) => {
+    let row = ' <option disable value="">chọn</option>';
+    array.forEach(element => {
+        row += `<option value="${element.code}">${element.name}</option>`
+    });
+    document.querySelector("#" + select).innerHTML = row
+}
+
+$("#province").change(() => {
+    callApiDistrict(host + "p/" + $("#province").val() + "?depth=2");
+    printResult();
+});
+$("#district").change(() => {
+    callApiWard(host + "d/" + $("#district").val() + "?depth=2");
+    printResult();
+});
+$("#ward").change(() => {
+    printResult();
+})
+
+var printResult = () => {
+    if ($("#district").val() != "" && $("#province").val() != "" &&
+        $("#ward").val() != "") {
+        result = $("#province option:selected").text() +
+            " , " + $("#district option:selected").text() + " , " +
+            $("#ward option:selected").text();
+    }
+
+}
+
+    $(document).ready(function(){
+        $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+}); 
+
+    // xử lý lại ajax để có thể gửi form
+
+        $('#submitCheckoutForm').on('click', function(e){
+            if($('#ten').val() == ""){
+                toastr.error('Vui lòng điền tên người nhận hàng');
+            e.preventDefault();
+
+            }
+            else if( $('#diachi').val()==""){
+                toastr.error('Vui lòng điền địa chỉ nhận hàng');
+            e.preventDefault();
+
+            }
+            else if( $('#sodienthoai').val()==""){
+                toastr.error('Vui lòng điền số điện thoại');
+            e.preventDefault();
+
+            }
+            else if($('#sodienthoai').val().length !=10){
+                toastr.error('Số điện thoại không hợp lệ');
+            e.preventDefault();
+
+            }
+            result = $('#diachi').val() + ", " + result;
+            $("#result").val(result);
+
+            const total = @Model.total; // Lấy giá trị total từ Blade
+
+            const inputElement = document.createElement('input');
+            inputElement.setAttribute('type', 'text');
+            inputElement.setAttribute('name', 'total');
+            inputElement.setAttribute('value', total);
+            inputElement.setAttribute('hidden', true);
+            inputElement.setAttribute('readonly', true);
+
+            document.getElementById('total-box').appendChild(inputElement);
+        if($("input[name='exampleRadios']:checked").val() === 'COD'){
+            e.preventDefault();
+                console.log("COD");
+                $.ajax({
+                url: "/check-out/cod",
+                method: 'POST',
+                data: {
+                     ten: $('#ten').val(),
+                     sdt: $('#sodienthoai').val(),
+                     total: $('.total').text(),
+                    //  address: $('#diachi').val() + ", " + result,
+                     address: result,
+                     paymentMethod: $("input[name='exampleRadios']:checked").val()
+                      },
+                success:function(data){
+                    if(data.status === 'success')
+                    {
+                        window.location.href = data.redirect_url;
+                    }        
+                    },
+                error: function(data){
+                    }
+            })
+        }else{
+            // console.log('momo nè');
+            // e.preventDefault();
+            // $.ajax({
+            //     url: "{{ route('customer.checkout.form-submit') }}",
+            //     method: 'POST',
+            //     data: {
+            //          ten: $('#ten').val(),
+            //          sdt: $('#sodienthoai').val(),
+            //          total: $('.total').text(),
+            //          address: $('#diachi').val() + ", " + result,
+            //          paymentMethod: $("input[name='exampleRadios']:checked").val()
+            //           }
+            // })
+            // window.location.href = "{{route('customer.checkout.form-submit')}}" ;     
+        }
+
+    })
+
+    })
+    
+    
+</script>
+}
+

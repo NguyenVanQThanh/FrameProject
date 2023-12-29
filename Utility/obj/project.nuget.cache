@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o5MNh9TFHyc4pzuT0kz59MN0el3NaHICQtOnfpalJwT7tR9W5zUbKaRoQYUkIabQ/VWmwKqDCUO3YUUfwEm4Jw==",
+  "dgSpecHash": "+t9eb4nwhKj5dwQ8GYieg+fSonjYMGxf0NTnobJhiQdACKp9bLgiKlm27aRmXCWkeCUXT58A377AKuVnViLMlg==",
   "success": true,
-  "projectFilePath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\Utility\\Utility.csproj",
+  "projectFilePath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\Utility\\Utility.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

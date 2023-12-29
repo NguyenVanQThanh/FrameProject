@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T6vaofpW0bDUDvhWGGVf6eAC/vtedaJv2yrQpzlGmEFPhFBmMhLijgeLP6EVUiVOLg6ALWebLwaiRvni0NLkIg==",
+  "dgSpecHash": "X5orP1ndxxhoHvN5Mp5xlrljuKit2IAps06QYo20+kbzx0lc9jmHWYoIOTBZPRbKeIg7dPnl7dySRwlFl6zOOQ==",
   "success": true,
-  "projectFilePath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\ProjectFrame\\ProjectFrame\\ProjectFrame.csproj",
+  "projectFilePath": "D:\\Study\\ProjectHK1_2023-2024\\Framework\\Project\\FrameProject\\ProjectFrame\\ProjectFrame.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
@@ -56,6 +56,7 @@
     "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\jquery\\1.6.3\\jquery.1.6.3.nupkg.sha512",
     "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.0\\microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",
     "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.0\\microsoft.aspnetcore.components.8.0.0.nupkg.sha512",
     "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.0\\microsoft.aspnetcore.components.analyzers.8.0.0.nupkg.sha512",
@@ -186,7 +187,8 @@
     "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
     "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\system.threading.tasks.dataflow\\7.0.0\\system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+    "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512",
+    "C:\\Users\\LAPTOP ACER\\.nuget\\packages\\toastr\\2.1.1\\toastr.2.1.1.nupkg.sha512"
   ],
   "logs": []
 }

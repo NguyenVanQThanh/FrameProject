@@ -10,3 +10,16 @@ D:\Study\ProjectHK1_2023-2024\Framework\ProjectFrame\Models\obj\Debug\net8.0\ref
 D:\Study\ProjectHK1_2023-2024\Framework\ProjectFrame\Models\obj\Debug\net8.0\Models.pdb
 D:\Study\ProjectHK1_2023-2024\Framework\ProjectFrame\Models\obj\Debug\net8.0\ref\Models.dll
 D:\Study\ProjectHK1_2023-2024\Framework\ProjectFrame\Models\obj\Debug\net8.0\Models.csproj.AssemblyReference.cache
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\bin\Debug\net8.0\Models.deps.json
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\bin\Debug\net8.0\Models.dll
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\bin\Debug\net8.0\Models.pdb
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\Models.csproj.AssemblyReference.cache
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\Models.AssemblyInfoInputs.cache
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\Models.AssemblyInfo.cs
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\Models.csproj.CoreCompileInputs.cache
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\Models.sourcelink.json
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\Models.dll
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\refint\Models.dll
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\Models.pdb
+D:\Study\ProjectHK1_2023-2024\Framework\Project\FrameProject\Models\obj\Debug\net8.0\ref\Models.dll

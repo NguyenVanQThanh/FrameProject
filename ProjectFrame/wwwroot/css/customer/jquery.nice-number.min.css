@@ -11,7 +11,7 @@
 	border: 1px solid #aaa;
 	background: none;
 	outline: none;
-	pointer-events: none;
+	/* pointer-events: none; */
 }
 
 .select_number span.spinner>.sub,

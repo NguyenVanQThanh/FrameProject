@@ -9,7 +9,9 @@ namespace DataAccess.Repository.IRepository
 {
     public interface ICartRepository : IRepository<Cart>
     {
+        IEnumerable<Cart> FindCartOfUser(string userId);
         void Update(Cart cart);
         void Save();
+        double Total(List<Cart> carts);
     }
 }

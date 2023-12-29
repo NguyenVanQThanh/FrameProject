@@ -1,0 +1,407 @@
+@using Models
+@model Product
+
+    <!--==========================
+      PRODUCT MODAL VIEW START
+    ===========================-->
+  
+    <!--==========================
+      PRODUCT MODAL VIEW END
+    ===========================-->
+
+
+    <!--============================
+        BREADCRUMB START
+    ==============================-->
+    <section id="wsus__breadcrumb">
+        <div class="wsus_breadcrumb_overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h4>products details</h4>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--============================
+        BREADCRUMB END
+    ==============================-->
+
+
+    <!--============================
+        PRODUCT DETAILS START
+    ==============================-->
+    <section id="wsus__product_details">
+        <div class="container">
+            <div class="wsus__details_bg">
+                <div class="row">
+                    <div class="col-xl-4 col-md-5 col-lg-5">
+                        <div id="sticky_pro_zoom">
+                            <div class="exzoom hidden" id="exzoom">
+                                <div class="exzoom_img_box">
+                                    <a class="venobox wsus__pro_det_video" data-autoplay="true" data-vbtype="video"
+                                        href="https://www.youtube.com/watch?v=ebfXWwgjDPI">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+                                    <ul class='exzoom_img_ul'>
+                                        <li><img class="zoom ing-fluid w-100" src="@Model.ImageUrl?Model.ImageUrl:''" alt="product"></li>
+                                    </ul>
+                                </div>
+                                <div class="exzoom_nav"></div>
+                                <p class="exzoom_btn">
+                                    <a href="javascript:void(0);" class="exzoom_prev_btn"> <i
+                                            class="far fa-chevron-left"></i> </a>
+                                    <a href="javascript:void(0);" class="exzoom_next_btn"> <i
+                                            class="far fa-chevron-right"></i> </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-md-7 col-lg-7">
+                        <div class="wsus__pro_details_text">
+                            <a class="title" href="#">@Model.Name</a>
+                            <p class="wsus__stock_area"><span class="in_stock">Có sẵn</span> @Model.Quantity sản ph</p>
+                            <h4>@Model.Price đ đ<del>đ60.00</del></h4>
+                            <p class="review">
+                                <span>20 review</span>
+                            </p>
+                          
+                            <form class="shopping-cart-form">
+                                <div class="wsus__selectbox">
+                                    <div class="row">
+                                        <input type="hidden" name="product_id" value="@Model.Id">
+                                    </div>
+                                </div>
+                                <div class="wsus__quentity">
+                                    <h5>Số lượng mua :</h5>
+                                    <div class="select_number">
+                                        <input class="number_area" name="quantity" type="number" min="1" max="@Model.Quantity" value="1" />
+                                    </div>
+                                </div>
+                                
+                                <ul class="wsus__button_area">
+                                    @* {{-- gửi 1 ajax request đến 1 specify route --}} *@
+                                    <li><button type="submit" class="add_cart" href="#" >Thêm vào giỏ hàng</button></li>
+                                </ul>
+                            </form>
+                            <p class="brand_model"><span>Nhà cung cấp :</span>@Model.Supplier</p>
+                            <div class="wsus__pro_det_share">
+                                <h5>share :</h5>
+                                <ul class="d-flex">
+                                    <li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a class="whatsapp" href="#"><i class="fab fa-whatsapp"></i></a></li>
+                                    <li><a class="instagram" href="#"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                            @* {{-- <a class="wsus__pro_report" href="#" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"><i class="fal fa-comment-alt-smile"></i> Report incorrect
+                                product information.</a> --}} *@
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-12 mt-md-5 mt-lg-0">
+                        <div class="wsus_pro_det_sidebar" id="sticky_sidebar">
+                            <ul>
+                                <li>
+                                    <span><i class="fal fa-truck"></i></span>
+                                    <div class="text">
+                                        <h4>Return Available</h4>
+                                        <!-- <p>Lorem Ipsum is simply dummy text of the printing</p> -->
+                                    </div>
+                                </li>
+                                <li>
+                                    <span><i class="far fa-shield-check"></i></span>
+                                    <div class="text">
+                                        <h4>Secure Payment</h4>
+                                        <!-- <p>Lorem Ipsum is simply dummy text of the printing</p> -->
+                                    </div>
+                                </li>
+                                <li>
+                                    <span><i class="fal fa-envelope-open-dollar"></i></span>
+                                    <div class="text">
+                                        <h4>Warranty Available</h4>
+                                        <!-- <p>Lorem Ipsum is simply dummy text of the printing</p> -->
+                                    </div>
+                                </li>
+                            </ul>
+                            @* {{-- <div class="wsus__det_sidebar_banner">
+                                <img src="images/blog_1.jpg" alt="banner" class="img-fluid w-100">
+                                <div class="wsus__det_sidebar_banner_text_overlay">
+                                    <div class="wsus__det_sidebar_banner_text">
+                                        <p>Black Friday Sale</p>
+                                        <h4>Up To 70% Off</h4>
+                                        <a href="#" class="common_btn">shope now</a>
+                                    </div>
+                                </div>
+                            </div> --}} *@
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="wsus__pro_det_description">
+                        <div class="wsus__details_bg">
+                            <ul class="nav nav-pills mb-3" id="pills-tab3" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pills-home-tab7" data-bs-toggle="pill"
+                                        data-bs-target="#pills-home22" type="button" role="tab"
+                                        aria-controls="pills-home" aria-selected="true">Đặc trị các vấn đề da</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-profile-tab7" data-bs-toggle="pill"
+                                        data-bs-target="#pills-profile22" type="button" role="tab"
+                                        aria-controls="pills-profile" aria-selected="false">Thông tin sản phẩm</button> 
+                                        @* {{-- chứa mô tả, loại sản phẩm  --}} *@
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-contact-tab2" data-bs-toggle="pill"
+                                        data-bs-target="#pills-contact2" type="button" role="tab"
+                                        aria-controls="pills-contact2" aria-selected="false">Đánh giá sản phẩm</button>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent4">
+                                <div class="tab-pane fade  show active " id="pills-home22" role="tabpanel"
+                                    aria-labelledby="pills-home-tab7">
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="wsus__description_area">
+                                                <p>DÀNH CHO CÁC LOẠI DA: @Model.LoaiDa</p>
+                                                <p>ĐẶC TRỊ CÁC VẤN ĐỀ DA: @Model.VDeDa</p>
+                                        
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile22" role="tabpanel"
+                                    aria-labelledby="pills-profile-tab7">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 mb-4 mb-lg-0">
+                                            <div class="wsus__pro_det_info">
+                                                <h4>Mô tả sản phẩm</h4>
+                                                <p><span>Nhà cung cấp: @Model.Supplier </span></p>
+                                                <p><span>Mô tả: </span> @Model.Description</p>
+
+                                                <p>
+                                                    <span>Giới tính: @Model.Sex</span>
+                                                    
+                                                </p>
+                                               
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-contact2" role="tabpanel"
+                                    aria-labelledby="pills-contact-tab2">
+                                    <div class="wsus__pro_det_review">
+                                        <div class="wsus__pro_det_review_single">
+                                            <div class="row">
+                                                <div class="col-xl-8 col-lg-7">
+                                                    <div class="wsus__comment_area">
+                                                        <h4>Reviews <span>{{ count($reviews) }} đánh giá</span></h4>
+                                                        @* @foreach ($reviews as $review )
+                                                            <div class="wsus__main_comment">
+                                                                <div class="wsus__comment_text reply">
+                                                                    <h6>{{ $review->user->name }} <span>{{ $review->rating }} <i
+                                                                                class="fas fa-star"></i></span>
+                                                                    </h6>
+                                                                    <span>{{ date('d m Y', strtotime($review->created_at)) }}</span>
+                                                                    <p>{{ $review->review }}</p>
+                                                                    {{-- <a href="#" data-bs-toggle="collapse"
+                                                                        data-bs-target="#flush-collapsetwo2">reply</a>
+                                                                    <div class="accordion accordion-flush"
+                                                                        id="accordionFlushExample2">
+                                                                        <div class="accordion-item">
+                                                                            <div id="flush-collapsetwo2"
+                                                                                class="accordion-collapse collapse"
+                                                                                aria-labelledby="flush-collapsetwo"
+                                                                                data-bs-parent="#accordionFlushExample">
+                                                                                <div class="accordion-body">
+                                                                                    <form>
+                                                                                        <div
+                                                                                            class="wsus__riv_edit_single text_area">
+                                                                                            <i class="far fa-edit"></i>
+                                                                                            <textarea cols="3" rows="1"
+                                                                                                placeholder="Your Text"></textarea>
+                                                                                        </div>
+                                                                                        <button type="submit"
+                                                                                            class="common_btn">submit</button>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div> --}}
+                                                                </div>
+                                                            </div>
+                                                        @endforeach *@
+                                                        <div id="pagination">
+                                                            <nav aria-label="Page navigation example">
+                                                                <ul class="pagination">
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#"
+                                                                            aria-label="Previous">
+                                                                            <i class="fas fa-chevron-left"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="page-item"><a
+                                                                            class="page-link page_active" href="#">1</a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">2</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">3</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">4</a></li>
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                            <i class="fas fa-chevron-right"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-lg-5 mt-4 mt-lg-0">
+                                                    @* @php
+                                                        $isBrought = false;
+                                                    if (Auth::check()) {
+                                                        $orders = \App\Models\Order::where(['user_id'=>auth()->user()->id, 'status'=>'thành công'])->get();
+    
+                                                        foreach ($orders as $key => $order) {
+                                                           $existItem =  $order->orderDetails()->where('product_id', $product->id)->first();
+                                                        
+                                                           if($existItem){
+                                                            $isBrought = true;
+                                                           }
+                                                        }
+                                                        # code...
+                                                    }
+                                                    @endphp *@
+                                                    
+
+                                                    @* @if( $isBrought === true)
+                                                        <div class="wsus__post_comment rev_mar" id="sticky_sidebar3">
+                                                            <h4>Viết đánh giá</h4>
+                                                            <form action="{{ route('customer.review.create') }}" enctype="multipart/form-data" method="POST">
+                                                                @csrf
+                                                                <p class="rating">
+                                                                    <span>Vote sao: </span>
+                                                                
+                                                                </p>
+                                                            
+                                                                <div class="row">
+                                                                    
+                                                                    <div class="col-xl-12 mb-4">
+                                                                        <div class="wsus__single_com">
+                                                                            <select name="rating" id="" class="form-control">
+                                                                                <option value="">Sao</option>
+                                                                                <option value="1">1</option>
+                                                                                <option value="2">2</option>
+                                                                                <option value="3">3</option>
+                                                                                <option value="4">4</option>
+                                                                                <option value="5">5</option>
+
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                
+                                                                    <div class="col-xl-12">
+                                                                        <div class="col-xl-12">
+                                                                            <div class="wsus__single_com">
+                                                                                <textarea cols="3" rows="3" name="review"
+                                                                                    placeholder="Đánh giá của bạn"></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <input type="hidden" name="product_id" id="" value="{{ $product->id }}">
+                                                                <button class="common_btn" type="submit">Đánh giá</button>
+                                                            </form>
+                                                        </div>
+                                                    @endif *@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--============================
+        PRODUCT DETAILS END
+    ==============================-->
+
+
+    <!--============================
+        RELATED PRODUCT START
+    ==============================-->
+    
+    <!--============================
+        RELATED PRODUCT END
+    ==============================-->
+
+
+@section JS_Specific{
+    
+    <script>
+        $(document).ready(function(){
+        $.ajaxSetup({
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+            $('.shopping-cart-form').on('submit', function(e){
+                e.preventDefault();            
+                let formData = $(this).serialize();
+                // toastr.success(formData);
+                let urlAdd = "/Product/@Model.Id/addCart"
+                $.ajax({
+                    method: 'POST',
+                    data: formData,
+                    url: urlAdd,
+                    success: function(data){
+                        if(data.status === "Success"){
+                            toastr.success(data.message);
+                        }
+                    },
+                    error: function(data){
+
+                    }
+                })
+            });
+
+            function getCartCount(){
+                $.ajax({
+                    method: 'GET',
+                    url: "{{route('cart-count')}}",
+                    success: function(data){
+                        $('#cart-count').text(data);
+
+                    },
+                    error: function(data){
+
+                    }
+                })
+
+            }
+    })     
+    </script>
+
+}
+
+
+
+

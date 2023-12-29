@@ -20,6 +20,7 @@ namespace Models
         public string Phone { get; set; }
         [Required]
         public string Status { get; set; }
+        public string? Payment_status {get; set;}
         [Required]
         public Boolean Enable { get; set; }
         [Required]
@@ -30,6 +31,8 @@ namespace Models
         public string? CustomerId {  get; set; }
         [ForeignKey("CustomerId")]
         public User? User { get; set; }
+
+        
 
 
     }
